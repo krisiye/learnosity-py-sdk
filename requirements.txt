@@ -1,0 +1,2 @@
+click==6.7
+learnosity_sdk==0.1.2
