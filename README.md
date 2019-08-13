@@ -21,7 +21,7 @@ From this directory:
 
     ```json
     {
-      "organizationId": 402,
+      "organizationId": foo,
       "domain": "localhost",
       "consumerKey": "",
       "consumerSecret": ""
@@ -34,20 +34,20 @@ From this directory:
 
     ```bash
     # Get a specific question and print to stdout
-    python get_questions_from_learnosity_api.py \
+    python get-data-from-learnosity.py \
         --credentials secrets.json \
         --endpoint questions \
         --reference 8c375ea6-4000-40fa-bb5b-4d7a64463284\
 
     # Get a specific activity and save the response JSON
-    python get_questions_from_learnosity_api.py \
+    python get-data-from-learnosity.py \
         --credentials file-we-definitely-didnt-commit-to-git.json \
         --endpoint activities \
         --reference AGA_FL20E_LRN_G11U2M03L03_0005 \
         > response.json
 
     # Get 100 items
-    python get_questions_from_learnosity_api.py \
+    python get-data-from-learnosity.py \
         --credentials secrets.json \
         --endpoint items \
         --limit 100 \
@@ -57,7 +57,7 @@ From this directory:
 1.  See `--help` for script usage information
 
     ```bash
-    python get-questions-from-learnosity-api.py --help
+    python get-data-from-learnosity.py --help
     ```
 
 [1]: https://docs.learnosity.com/assessment/questions/security

@@ -41,11 +41,11 @@ def validate_credentials(ctx, param, value):
         raise click.BadParameter(error_message)
 
 
-def make_request_packet(reference: str, limit: str):
+def make_request_packet(reference: str, organization_id: str, limit: str):
     if reference is None:
-        return {"limit": limit}
+        return {"limit": limit, "organisation_id":organization_id}
     else:
-        return {"references": [reference]}
+        return {"references": [reference], "organisation_id":organization_id}
 
 
 def get_response_from_api(
@@ -62,7 +62,7 @@ def get_response_from_api(
             "domain": credentials["domain"],
         },
         secret=credentials["consumerSecret"],
-        request_packet=make_request_packet(reference_id, limit),
+        request_packet=make_request_packet(reference_id, credentials["organizationId"], limit),
         action="get",
     )
 
