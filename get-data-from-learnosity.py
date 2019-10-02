@@ -6,7 +6,7 @@ from learnosity_sdk.request import DataApi
 
 def validate_endpoint(ctx, param, value) -> str:
     error_message = "Must be one of `activities`, `items`, or `questions`"
-    if value in ["activities", "items", "questions"]:
+    if value in ["activities", "items", "questions", "features"]:
         return value
     else:
         raise click.BadParameter(error_message)
@@ -72,7 +72,7 @@ def get_response_from_api(
 @click.command()
 @click.option(
     "--endpoint",
-    type=click.Choice(["activities", "items", "questions"]),
+    type=click.Choice(["activities", "items", "questions", "features"]),
     help="""
          The Learnosity API Endpoint you'd like to use. Must be one of `activities`, `items`, or `questions`
          """,
