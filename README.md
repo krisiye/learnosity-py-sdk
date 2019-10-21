@@ -52,7 +52,25 @@ From this directory:
         --endpoint items \
         --limit 100 \
         > response.json
+
+    # Get item by reference
+    python get-data-from-learnosity.py \
+        --credentials secrets.json \
+        --endpoint items \
+        --reference 176469930 \
+        > response.json
+
+    # Get item feature
+    python get-data-from-learnosity.py \
+        --credentials secrets.json \
+        --endpoint features \
+        --reference SP_foo_1 \
+        > response.json
+
+
     ```
+
+
 
 1.  See `--help` for script usage information
 
